@@ -1,0 +1,36 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.main .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+}
+
+.main .header .selecione-jogo {
+    height: 50%;
+
+}
+
+.main .header .navigation {
+    align-self: flex-start;
+}
+
+.main .header .navigation ul {
+    align-self: flex-start;
+    display: flex;
+    margin: 2rem;
+    gap: 2%;
+}
+
+.main .atividades ul {
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+

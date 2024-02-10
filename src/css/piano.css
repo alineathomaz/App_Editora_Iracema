@@ -1,0 +1,142 @@
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .background {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .container-elementos .navigation {
+    position: absolute;
+    top: 2.75%;
+    left: 2%;
+    display: flex;
+    gap: 2%;
+    width: 15%;
+}
+
+.main .container .container-elementos .navigation a {
+    width: 30%;
+    display: flex;
+}
+
+.main .container .container-elementos .navigation a img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .container-elementos .animais {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 26%;
+    left: 21%;
+    width: 43%;
+    height: 16%;
+}
+
+.main .container .container-elementos .animais .seletor-animais {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1.5%;
+    width: 100%;
+    height: 100%;
+    background: url(../images/piano/fundo-animais.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main .container .container-elementos .animais .setas {
+    width: 3%;
+    height: 30%;
+}
+
+.main .container .container-elementos .animais .setas img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .container-elementos .animais .seletor-animais button {
+    width: 11.775%;
+}
+
+.main .container .container-elementos .animais .seletor-animais button img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .container-elementos .animais .seletor-animais button:nth-child(odd) {
+    transform: translateY(-12%);
+}
+
+.main .container .container-elementos .animais .seletor-animais button:nth-child(even) {
+    transform: translateY(12%);
+}
+
+.main .container .container-elementos .animais .seletor-animais button.hidden {
+    display: none;
+}
+
+.main .container .container-elementos .instrumentos {
+    position: absolute;
+    top: 45%;
+    left: 22%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main .container .container-elementos .instrumentos button {
+    width: 13%;
+}
+
+.main .container .container-elementos .instrumentos button img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .container-elementos .teclas {
+    position: absolute;
+    bottom: 19%;
+    left: 19.5%;
+    width: 52%;
+    height: 23%;
+    display: flex;
+    gap: .5%;
+}
+
+.main .container .container-elementos .teclas button {
+    max-width: 14%;
+}
+
+.main .container .container-elementos .teclas button img {
+    width: 100%;
+    height: 100%;
+}
+
+.scale-1 {
+    transform: scale(1.1);
+}
+
+.scale-2 {
+    transform: scale(1.2);
+}
+
+.scale-3 {
+    transform: scale(1.3);
+}
