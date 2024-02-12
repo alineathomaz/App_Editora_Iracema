@@ -3,10 +3,7 @@ import { selecionaInstrumento } from "./funções/selecionaInstrumentos.js";
 import { animais } from "./objetos/animais.js";
 import { instrumentos } from "./objetos/instrumentos.js";
 import { stopAudioAnimal, stopCurrentNote } from "./funções/stopCurrentSounds.js";
-
-const teclasPiano = document.querySelectorAll(".teclas button");
-const setaDireita = document.getElementById("seta-direita")
-const setaEsquerda = document.getElementById("seta-esquerda")
+import { teclasPiano, setaDireita, setaEsquerda } from "./variaveis.js";
 
 let indiceAtual = 0
 let instrumentoSelecionado = 'teclado'
@@ -44,7 +41,13 @@ setaEsquerda.addEventListener('click', () => {
 
 instrumentos.instrumentos.forEach(instrumento => {
     instrumento.addEventListener('click', () => {
-        selecionaInstrumento(instrumento, instrumentoSelecionado, notaAtual)
+        if(notaAtual !== '') {
+            stopCurrentNote(instrumentoSelecionado, notaAtual);
+            notaAtual = ''
+        }
+        selecionaInstrumento(instrumento)   
+
+        instrumentoSelecionado = instrumento.name
     })
 })
 
