@@ -5,7 +5,6 @@ const tintas = document.querySelectorAll(".paint-colors button")
 let modoSelecionado = 'pincel'
 let corSelecionada = cores['vermelho']
 
-console.log(corSelecionada)
 
 paintModes.forEach(paintMode => {
     paintMode.addEventListener('click', () => {
@@ -37,6 +36,5 @@ tintas.forEach(tinta => {
         tinta.classList.toggle('selected')
         corSelecionada = cores[tinta.name]
 
-        console.log(corSelecionada)
     })
 })
