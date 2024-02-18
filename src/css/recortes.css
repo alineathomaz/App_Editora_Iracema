@@ -1,0 +1,126 @@
+.main {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    aspect-ratio: 16/7;
+
+}
+
+.main .navegacao {
+    display: flex;
+    align-self: flex-start;
+    margin: 1%;
+    width: 15%;
+    gap: 3%;
+}
+
+.main .navegacao a {
+    width: 33.33%;
+    height: 97.184%;
+}
+
+.main .navegacao a img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .selecao-recortes {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: center;
+
+}
+
+.main .selecao-recortes .main-image {
+    height: 12.5%;
+}
+
+.main .selecao-recortes .recortes {
+    padding: 3.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14%;
+    height: 87.5%;
+}
+
+.main .selecao-recortes .recortes a {
+    width: 20%;
+    height: 43%;
+}
+
+.main .selecao-recortes .recortes a img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .recorte {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 80%;
+    height: 90%;
+    transform: translateX(-15%);
+}
+
+.main .recorte .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    height: 90%;
+}
+
+.main .recorte .details .dedoche-name {
+    width: 80%;
+}
+
+.main .recorte .details .details-dedoche {
+    margin-bottom: 10%;
+    width: 65%;
+}
+
+.main .recorte .details .details-dedoche img {
+    width: 100%;
+}
+
+.main .recorte .details .download {
+    width: 40%;
+}
+
+.main .recorte .details .download img {
+    width: 100%;
+}
+
+.main .recorte .image {
+    height: 100%;
+}
+
+.main .recorte .image img {
+    height: 100%;
+    transform: scale(1.11) translateY(-5%) translateX(20%);
+}
+
+.main .recorte .details button {
+    width: 22%;
+    height: 27%;
+}
+
+.main .recorte .details button img {
+    width: 100%;
+    height: 100%;
+}
+
+.selecao-recortes.hidden, .recorte.hidden {
+    display: none;
+    opacity: 0;
+}
+

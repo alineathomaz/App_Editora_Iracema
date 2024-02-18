@@ -1,12 +1,13 @@
 .main {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 15%;
+    aspect-ratio: 16 / 8;
 }
 
 .main .navegacao {

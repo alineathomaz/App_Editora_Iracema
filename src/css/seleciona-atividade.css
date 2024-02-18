@@ -1,19 +1,26 @@
 .main {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
+    aspect-ratio: 16/8;
 }
 
 .main .navigation {
-    justify-self: flex-start;
-    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    width: 13%;
+    gap: 3%;
+    margin-top: 1%;
+    margin-left: 1%;
 }
 
-.main .navigation ul {
-    display: flex;
-    gap: 5px;
-    margin: 2rem;
+.main .navigation a {
+    width: 34%;
+}
+
+.main .navigation a img {
+    width: 100%;
 }
 
 .main .conteudo {
@@ -21,17 +28,29 @@
     justify-self: center;
     display: flex;
     height: 60%;
-    width: 60%;
+    width: 42%;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     gap: 25%
 }
 
+.main .conteudo .main-image {
+    width: 65%;
+}
+
 .main .conteudo .selection {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20%;
+    width: 100%;
+}
+
+.main .conteudo .selection a {
+    width: 40%;
+}
+
+.main .conteudo .selection a img {
     width: 100%;
 }

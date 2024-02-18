@@ -79,6 +79,22 @@
     height: 100%;
 }
 
+.main .container .container-elementos .animais .seletor-animais button:active img {
+    transform: scale(1.2);
+}
+
+.main .container .container-elementos .animais .seletor-animais button:active .scale-1 {
+    transform: scale(1.3);
+}
+
+.main .container .container-elementos .animais .seletor-animais button:active .scale-2 {
+    transform: scale(1.4);
+}
+
+.main .container .container-elementos .animais .seletor-animais button:active .scale-3 {
+    transform: scale(1.5);
+}
+
 .main .container .container-elementos .animais .seletor-animais button:nth-child(odd) {
     transform: translateY(-12%);
 }
@@ -110,6 +126,10 @@
     height: 100%;
 }
 
+.main .container .container-elementos .instrumentos button:active img {
+    transform: scale(1.2);
+}
+
 .main .container .container-elementos .teclas {
     position: absolute;
     bottom: 19%;
@@ -127,6 +147,10 @@
 .main .container .container-elementos .teclas button img {
     width: 100%;
     height: 100%;
+}
+
+.main .container .container-elementos .teclas button:active img {
+    transform: scale(1.1);
 }
 
 .scale-1 {

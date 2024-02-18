@@ -1,4 +1,5 @@
 const selecaoDobraduras = document.querySelectorAll(".selecao-dobradura .dobraduras a")
+const voltar = document.getElementById('voltar')
 const passos = {
     cachorro: document.querySelectorAll('#cachorro .passos .passo'),
     gato: document.querySelectorAll('#gato .passos .passo'),
@@ -7,8 +8,14 @@ const passos = {
     barco: document.querySelectorAll('#barco .passos .passo')
 }
 
+const buttonAvancar = {
+    cachorro: document.querySelector('#cachorro .btn-avancar'),
+    gato: document.querySelector('#gato .btn-avancar'),
+    flor: document.querySelector('#flor .btn-avancar')
+}
+
 let dobraduraSelecionada = ''
-let currentPosition = 0
+let currentPosition = 0;
 
 selecaoDobraduras.forEach(dobradura => {
     dobradura.addEventListener('click', () => {
@@ -19,14 +26,23 @@ selecaoDobraduras.forEach(dobradura => {
     })
 })
 
-const btnsAvancar = document.querySelectorAll('.dobradura #btn-avancar')
+const btnsAvancar = document.querySelectorAll('.dobradura .btn-avancar')
+
+//função para que os itens aparecendo na tela avancem.
 
 btnsAvancar.forEach(btnAvancar => {
     btnAvancar.addEventListener('click', () => {
-        if(currentPosition === passos[dobraduraSelecionada].length) {
+        if(dobraduraSelecionada === 'barco' && currentPosition === passos[dobraduraSelecionada].length - 1) {
+            console.log('Parou aqui')
             return
         }
 
+        if(currentPosition === passos[dobraduraSelecionada].length) {
+            console.log('retornou')
+            return
+        }
+
+        console.log(currentPosition)
         if (currentPosition % 2 === 0 && currentPosition < passos[dobraduraSelecionada].length) {
             mudaVisibilidade(currentPosition + 1)
             if (currentPosition < passos[dobraduraSelecionada].length - 1) {
@@ -43,6 +59,46 @@ btnsAvancar.forEach(btnAvancar => {
     })
 })
 
+//função para que mude os itens que estão aparecendo na tela
+
 function mudaVisibilidade(currentPosition) {
+    if(passos[dobraduraSelecionada][currentPosition].classList.contains('pronto')){
+        if(dobraduraSelecionada === 'cachorro' || dobraduraSelecionada === 'gato'){
+            buttonAvancar[dobraduraSelecionada].classList.add('pronto')
+        } else if (dobraduraSelecionada === 'flor') {
+            buttonAvancar[dobraduraSelecionada].classList.add('pronto-flor')
+        }
+    }
     passos[dobraduraSelecionada][currentPosition].classList.toggle('hidden')
 }
+
+//Função para que o botão de voltar não volte para a página anterior caso algum dos animais esteja selecinado.
+
+voltar.addEventListener('click', event => {
+    if(dobraduraSelecionada !== ''){
+        event.preventDefault()
+        
+        passos[dobraduraSelecionada].forEach(passo => {
+            if(!passo.classList.contains('hidden')){
+                passo.classList.toggle('hidden')
+            }
+        })
+        
+        passos[dobraduraSelecionada][0].classList.toggle('hidden')
+        
+        if(dobraduraSelecionada === 'cachorro' || dobraduraSelecionada === 'gato'){
+            buttonAvancar[dobraduraSelecionada].classList.remove('pronto')
+        } else if (dobraduraSelecionada === 'flor') {
+            buttonAvancar[dobraduraSelecionada].classList.remove('pronto-flor')
+        }
+        
+        const dobradura = document.getElementById(dobraduraSelecionada)
+        const selecaoDobradura = document.getElementById('selecao-dobradura')
+        
+        dobradura.classList.toggle('hidden')
+        selecaoDobradura.classList.toggle('hidden')
+
+        dobraduraSelecionada = ''
+        currentPosition = 0
+    }
+})
