@@ -10,4 +10,16 @@ const cores = {
     preto: '#595959'
 }
 
-export { cores }
+const coresBaldeTinta = {
+    vermelho: [228, 130, 122, 255],
+    verde: [158, 230, 179, 255],
+    amarelo: [249, 233, 109, 255],
+    roxo: [223, 166, 244, 255],
+    azul: [171, 224, 254, 255],
+    laranja: [237, 192, 102, 255],
+    marrom: [198, 141, 103, 255],
+    branco: [244, 244, 244, 255],
+    preto: [89, 89, 89, 255]
+}
+
+export { cores, coresBaldeTinta }

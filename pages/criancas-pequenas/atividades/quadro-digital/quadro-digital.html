@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,34 +9,39 @@
     <link rel="stylesheet" href="../../../../src/css/reset.css">
     <link rel="stylesheet" href="../../../../src/css/quadro-digital.css">
 </head>
+
 <body>
     <main class="main">
         <div class="container">
-            <div class="container-image">
-                <img class="background" src="../../../../src/images/fundos/quadro-digital.svg" alt="Fundo do quadro digital">
-            </div>
+            <img src="../../../../src/images/fundos/quadro-digital.svg" alt="Imagem de fundo do Quadro Digital" class="main-image">
             <header class="navegacao">
-                <a href="../atividades-cp.html"><img src="../../../../src/images/buttons/navegacao/voltar-branco.svg" alt="Botão voltar"></a>
-                <a href="../../../../index.html"><img src="../../../../src/images/buttons/navegacao/home-branco.svg" alt="Botão home"></a>
+                <a href="../atividades-cp.html"><img src="../../../../src/images/buttons/navegacao/voltar-branco.svg"
+                        alt="Botão voltar"></a>
+                <a href="../../../../index.html"><img src="../../../../src/images/buttons/navegacao/home-branco.svg"
+                        alt="Botão home"></a>
                 <a><img src="../../../../src/images/buttons/audiodescricao-branco.svg" alt="Botão audiodescrição"></a>
                 <a><img src="../../../../src/images/buttons/botao-download-branco.svg" alt="Botão download"></a>
             </header>
             <div class="paint-modes">
                 <div class="pinceis">
                     <button class="selected" name="pincel">
-                        <img src="../../../../src/images/quadro-digital/buttons/modes/pincel-ativo.svg" alt="Botão de seleção do pincel">
+                        <img src="../../../../src/images/quadro-digital/buttons/modes/pincel-ativo.svg"
+                            alt="Botão de seleção do pincel">
                     </button>
                     <button name="spray">
-                        <img src="../../../../src/images/quadro-digital/buttons/modes/spray.svg" alt="Botão de seleção do spray">
+                        <img src="../../../../src/images/quadro-digital/buttons/modes/spray.svg"
+                            alt="Botão de seleção do spray">
                     </button>
                     <button name="balde-tinta">
-                        <img src="../../../../src/images/quadro-digital/buttons/modes/balde-tinta.svg" alt="Botão de seleção do balde de tinta">
+                        <img src="../../../../src/images/quadro-digital/buttons/modes/balde-tinta.svg"
+                            alt="Botão de seleção do balde de tinta">
                     </button>
                     <button name="borracha">
-                        <img src="../../../../src/images/quadro-digital/buttons/modes/borracha.svg" alt="Botão de seleção da borracha">
+                        <img src="../../../../src/images/quadro-digital/buttons/modes/borracha.svg"
+                            alt="Botão de seleção da borracha">
                     </button>
                 </div>
-                <input type="range" min="0" max="100" name="tamanho-pincel" id="tamanho-pincel">
+                <input type="range" min="2" max="50" name="tamanho-pincel" id="tamanho-pincel" value="2">
             </div>
 
             <div class="container-canvas">
@@ -43,36 +49,49 @@
             </div>
 
             <div class="paint-colors">
-                <button name="vermelho" class="selected">
-                    <img src="../../../../src/images/quadro-digital/buttons/paints/vermelho.svg" alt="Botao de seleção da tinta vermelha">
+                <button name="vermelho">
+                    <img src="../../../../src/images/quadro-digital/buttons/paints/vermelho.svg"
+                        alt="Botao de seleção da tinta vermelha">
                 </button>
                 <button name="verde">
-                    <img src="../../../../src/images/quadro-digital/buttons/paints/verde.svg" alt="Botao de seleção da tinta verde">
+                    <img src="../../../../src/images/quadro-digital/buttons/paints/verde.svg"
+                        alt="Botao de seleção da tinta verde">
                 </button>
                 <button name="amarelo">
-                    <img src="../../../../src/images/quadro-digital/buttons/paints/amarelo.svg" alt="Botao de seleção da tinta amarela">
+                    <img src="../../../../src/images/quadro-digital/buttons/paints/amarelo.svg"
+                        alt="Botao de seleção da tinta amarela">
                 </button>
                 <button name="roxo">
-                    <img src="../../../../src/images/quadro-digital/buttons/paints/roxo.svg" alt="Botao de seleção da tinta roxa">
+                    <img src="../../../../src/images/quadro-digital/buttons/paints/roxo.svg"
+                        alt="Botao de seleção da tinta roxa">
                 </button>
                 <button name="azul">
-                    <img src="../../../../src/images/quadro-digital/buttons/paints/azul.svg" alt="Botao de seleção da tinta azul">
+                    <img src="../../../../src/images/quadro-digital/buttons/paints/azul.svg"
+                        alt="Botao de seleção da tinta azul">
                 </button>
                 <button name="laranja">
-                    <img src="../../../../src/images/quadro-digital/buttons/paints/laranja.svg" alt="Botao de seleção da tinta laranja">
+                    <img src="../../../../src/images/quadro-digital/buttons/paints/laranja.svg"
+                        alt="Botao de seleção da tinta laranja">
                 </button>
                 <button name="marrom">
-                    <img src="../../../../src/images/quadro-digital/buttons/paints/marrom.svg" alt="Botao de seleção da tinta marrom">
+                    <img src="../../../../src/images/quadro-digital/buttons/paints/marrom.svg"
+                        alt="Botao de seleção da tinta marrom">
                 </button>
                 <button name="branco">
-                    <img src="../../../../src/images/quadro-digital/buttons/paints/branco.svg" alt="Botao de seleção da tinta branca">
+                    <img src="../../../../src/images/quadro-digital/buttons/paints/branco.svg"
+                        alt="Botao de seleção da tinta branca">
                 </button>
                 <button name="preto">
-                    <img src="../../../../src/images/quadro-digital/buttons/paints/preto.svg" alt="Botao de seleção da tinta preta">
+                    <img src="../../../../src/images/quadro-digital/buttons/paints/preto.svg"
+                        alt="Botao de seleção da tinta preta">
                 </button>
             </div>
+
+            <div class="cavalete"></div>
+            <div class="personagem"></div>
         </div>
     </main>
     <script type="module" src="../../../../src/js/quadro-digital/quadro.js"></script>
 </body>
+
 </html>

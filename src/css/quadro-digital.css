@@ -1,21 +1,20 @@
 .main {
-    width: 100%;
-    max-width: 1679px;
-    height: 100%;
+    max-width: 100vw;
+    height: 100vh;
     display: flex;
     align-content: center;
     justify-content: center;
-    /* background: rgb(207,235,249);
-    background: linear-gradient(180deg, rgba(207,235,249,1) 0%, rgba(120,175,97,1) 100%); */
+    aspect-ratio: 1340 / 800;
 }
 
 .main .container {
     position: relative;
     width: 100%;
     height: 100%;
+    aspect-ratio: 1340 / 800;
 }
 
-.main .container .container-image .background {
+.main .container .main-image {
     width: 100%;
     height: 100%;
 }
@@ -24,15 +23,16 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 5.5%;
-    height: 20%;
-    top: 5%;
-    left: 2%;
+    top: 6%;
+    left: 3%;
+    width: 5%;
+    height: 30%;
+    gap: 1%;
 }
 
 .main .container .navegacao a {
     width: 100%;
-    height: 100%;
+    height: 25%;
 }
 
 .main .container .navegacao a img {
@@ -41,29 +41,36 @@
 }
 
 .main .container .paint-modes {
-    display: flex;
     position: absolute;
-    bottom: 14%;
-    width: 7.5%;
-    height: 37%;
-    left: 2.15%;
-    gap: 1.2%;
-    justify-content: space-between;
+    bottom: 15%;
+    left: 3%;
+    width: 8%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    background-image: url(../images/quadro-digital/seletor-pinceis.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .main .container .paint-modes .pinceis {
     display: flex;
     flex-direction: column;
+    width: 67%;
+    height: 90%;
+    gap: 2%;
+    margin-left: 2%;
+    justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 100%;
-    gap: 2.5%;
 }
 
 .main .container .paint-modes .pinceis button {
-    width: 78%;
-    height: 100%;
+    width: 75%;
+    height: 25%;
 }
 
 .main .container .paint-modes .pinceis button img {
@@ -73,43 +80,47 @@
 
 .main .container .paint-modes input {
     appearance: slider-vertical;
-    width: 0%;
-    height: 63%;
-    transform: translateX(-3px) rotate(180deg) scale(1.05);
+    transform: rotate(180deg);
+    width: 1%;
+    height: 61%;
+    margin-right: 15%;
 }
 
 .main .container .container-canvas {
     position: absolute;
-    top: 5%;
-    left: 10%;
-    width: 88.45%;
-    height: 86.5%;
-    display: flex;
-}
-
-.main .container .container-canvas .canvas {
-    position: inherit;
-    width: 100%;
-    height: 100%;
+    top: 6%;
+    left: 10.3%;
+    width: 87.9%;
+    height: 85.8%;
 }
 
 .main .container .paint-colors {
     position: absolute;
-    bottom: 3%;
-    left: 22%;
+    bottom: 0;
+    z-index: 1;
+    background-image: url(../images/quadro-digital/cavalete-baixo.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 14%;
+    width: 80%;
+    height: 10%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 2%;
-    width: 63%;
+    gap: .5%;
 }
 
-.main .container .paint-colors button:nth-child(odd){
-    transform: translateY(6%);
+.main .container .paint-colors button {
+    width: 8%;
+    height: 72%;
 }
 
-.main .container .paint-colors button:nth-child(even){
-    transform: translateY(-6%);
+.main .container .paint-colors button:nth-child(odd) {
+    transform: translateY(10%);
+}
+
+.main .container .paint-colors button:nth-child(even) {
+    transform: translateY(-10%);
 }
 
 .main .container .paint-colors button img {
@@ -117,7 +128,33 @@
     height: 100%;
 }
 
-.main .container .paint-colors button.selected img{
-    transform: scale(1.3);
-    border-bottom: 3px solid black;
+.main .container .paint-colors button.selected img {
+    transform: scale(1.4);
+    border-bottom: 3px solid #fff;
+}
+
+.main .container .cavalete {
+    position: absolute;
+    background-image: url(../images/quadro-digital/cavalete.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 8%;
+    z-index: 1;
+    top: 0;
+    right: 14%;
+}
+
+.main .container .personagem {
+    position: absolute;
+    background-image: url(../images/quadro-digital/personagem.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    right: 1%;
+    width: 15%;
+    height: 24%;
+    z-index: 2;
 }
