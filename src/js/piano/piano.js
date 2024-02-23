@@ -1,8 +1,8 @@
-import { mudaAnimais } from "./funções/mudaAnimais.js";
-import { selecionaInstrumento } from "./funções/selecionaInstrumentos.js";
+import { mudaAnimais } from "./funcoes/mudaAnimais.js";
+import { selecionaInstrumento } from "./funcoes/selecionaInstrumentos.js";
 import { animais } from "./objetos/animais.js";
 import { instrumentos } from "./objetos/instrumentos.js";
-import { stopAudioAnimal, stopCurrentNote } from "./funções/stopCurrentSounds.js";
+import { stopAudioAnimal, stopCurrentNote } from "./funcoes/stopCurrentSounds.js";
 import { teclasPiano, setaDireita, setaEsquerda } from "./variaveis.js";
 
 let indiceAtual = 0
