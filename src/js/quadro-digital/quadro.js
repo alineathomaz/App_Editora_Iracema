@@ -42,6 +42,9 @@ tintas.forEach(tinta => {
             return
         }
 
+        const elementoSelecionado = document.querySelector('.paint-colors .selected')
+        elementoSelecionado.classList.toggle('selected')
+
         tinta.classList.toggle('selected')
         corSelecionada = cores[tinta.name]
         corSelecionadaBaldeTinta = tinta.name
@@ -55,7 +58,7 @@ tintas.forEach(tinta => {
     })
 })
 
-let drawingStart = function (event, modoSelecionado) {
+let drawingStart = function (event) {
 
     dragging = true;
     let positionX = event.clientX - containerCanvas.offsetLeft;

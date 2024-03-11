@@ -15,6 +15,7 @@
     display: flex;
     gap: 4%;
     width: 14.7%;
+    transition: all 0.5s ease-in;
 }
 
 .main .navegacao a img {
@@ -85,6 +86,7 @@
 
 .main .dobradura .passos .passo {
     width: 50%;
+    transition: all 0.5s ease-in-out;
 }
 
 .main .dobradura .passos .passo img {
@@ -140,4 +142,31 @@
     top: 12%;
     right: 5%;
     width: 10%;
+}
+
+.main .parabens {
+    position: absolute;
+    background-color: #FFFFFFBB;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .parabens img {
+    width: 70%;
+    height: 35%;
+}
+
+.main .navegacao.concluido {
+    top: 70%;
+    left: 43%;
+    z-index: 2;
+}
+
+.parabens.hidden {
+    display: hidden;
+    opacity: 0;
+    z-index: -1;
 }

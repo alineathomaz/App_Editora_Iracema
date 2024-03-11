@@ -8,6 +8,8 @@ const passos = {
     barco: document.querySelectorAll('#barco .passos .passo')
 }
 
+console.log(passos)
+
 const buttonAvancar = {
     cachorro: document.querySelector('#cachorro .btn-avancar'),
     gato: document.querySelector('#gato .btn-avancar'),
@@ -32,18 +34,18 @@ const btnsAvancar = document.querySelectorAll('.dobradura .btn-avancar')
 
 btnsAvancar.forEach(btnAvancar => {
     btnAvancar.addEventListener('click', () => {
-        if(dobraduraSelecionada === 'barco' && currentPosition === passos[dobraduraSelecionada].length - 1) {
-            console.log('Parou aqui')
-            return
-        }
+        if (currentPosition === passos[dobraduraSelecionada].length - 1) {
+            const parabens = document.getElementById('parabens')
+            const navegacao = document.getElementById('navegacao')
 
-        if(currentPosition === passos[dobraduraSelecionada].length) {
-            console.log('retornou')
+            parabens.classList.toggle('hidden')
+            navegacao.classList.toggle('concluido')
+
             return
         }
 
         console.log(currentPosition)
-        if (currentPosition % 2 === 0 && currentPosition < passos[dobraduraSelecionada].length) {
+        if (currentPosition % 2 === 0 && currentPosition < passos[dobraduraSelecionada].length - 1) {
             mudaVisibilidade(currentPosition + 1)
             if (currentPosition < passos[dobraduraSelecionada].length - 1) {
                 currentPosition++
@@ -62,8 +64,8 @@ btnsAvancar.forEach(btnAvancar => {
 //função para que mude os itens que estão aparecendo na tela
 
 function mudaVisibilidade(currentPosition) {
-    if(passos[dobraduraSelecionada][currentPosition].classList.contains('pronto')){
-        if(dobraduraSelecionada === 'cachorro' || dobraduraSelecionada === 'gato'){
+    if (passos[dobraduraSelecionada][currentPosition].classList.contains('pronto')) {
+        if (dobraduraSelecionada === 'cachorro' || dobraduraSelecionada === 'gato') {
             buttonAvancar[dobraduraSelecionada].classList.add('pronto')
         } else if (dobraduraSelecionada === 'flor') {
             buttonAvancar[dobraduraSelecionada].classList.add('pronto-flor')
@@ -75,26 +77,30 @@ function mudaVisibilidade(currentPosition) {
 //Função para que o botão de voltar não volte para a página anterior caso algum dos animais esteja selecinado.
 
 voltar.addEventListener('click', event => {
-    if(dobraduraSelecionada !== ''){
+    if (dobraduraSelecionada !== '') {
         event.preventDefault()
-        
+
         passos[dobraduraSelecionada].forEach(passo => {
-            if(!passo.classList.contains('hidden')){
+            if (!passo.classList.contains('hidden')) {
                 passo.classList.toggle('hidden')
             }
         })
-        
+
         passos[dobraduraSelecionada][0].classList.toggle('hidden')
-        
-        if(dobraduraSelecionada === 'cachorro' || dobraduraSelecionada === 'gato'){
+
+        if (dobraduraSelecionada === 'cachorro' || dobraduraSelecionada === 'gato') {
             buttonAvancar[dobraduraSelecionada].classList.remove('pronto')
         } else if (dobraduraSelecionada === 'flor') {
             buttonAvancar[dobraduraSelecionada].classList.remove('pronto-flor')
         }
-        
+
         const dobradura = document.getElementById(dobraduraSelecionada)
         const selecaoDobradura = document.getElementById('selecao-dobradura')
-        
+        const parabens = document.getElementById('parabens')
+        const navegacao = document.getElementById('navegacao')
+
+        parabens.classList.toggle('hidden')
+        navegacao.classList.toggle('concluido')
         dobradura.classList.toggle('hidden')
         selecaoDobradura.classList.toggle('hidden')
 
