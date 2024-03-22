@@ -9,6 +9,8 @@ let corSelecionada = ''
 let corSelecionadaBaldeTinta = ''
 let radius = 2;
 let dragging = false;
+
+
 canvas.width = canvasWidth
 canvas.height = canvasHeight
 canvas.style.backgroundColor = '#fff'
@@ -57,6 +59,7 @@ tintas.forEach(tinta => {
 
     })
 })
+
 
 let drawingStart = function (event) {
 
@@ -127,3 +130,18 @@ const selecionaCorInicial = () => {
 }
 
 selecionaCorInicial()
+
+// Selecione o canvas e a imagem
+var canvasImage = document.getElementById('canvasImage');
+var downloadLink = document.getElementById('downloadLink');
+var ctx = canvas.getContext('2d');
+ctx.fillStyle = '#FFFFFF'; // Define a cor de fundo como branco
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+// Evento de clique na imagem
+canvasImage.addEventListener('click', function() {
+    // Converta o conteúdo do canvas em um URL de dados
+    var dataURL = canvas.toDataURL('image/jpeg');
+    // Atribua o URL de dados ao atributo href do link
+    downloadLink.href = dataURL;
+  });
