@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.results {
+    width: 50%;
+    height: 300px;
+    margin-top: 250px;
+    margin-left: 500px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 240, 247);
+    border-radius: 5px;
+    border-color: red;
+}

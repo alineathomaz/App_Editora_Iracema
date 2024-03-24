@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, orientation=portrait">
+    <title>Iracema - Ligue as coisas</title>
+
+    <link rel="stylesheet" href="/src/css/reset.css">
+    <link rel="stylesheet" href="/pages/criancas-pequenas/atividades/ligue-as-coisas/ligue-as-coisas.css">
+
+    <style>
+        .coluna1, .coluna2{
+            top: 20%;
+            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            width: 8%;
+            height: 30%;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .coluna1 {
+            left: 2%;
+        }
+
+        .coluna2 {
+            right: 2%;
+        }
+
+    </style>
+</head>
+<body>
+    <main class="main">
+        <header class="navegacao">
+            <a href="/pages/criancas-pequenas/atividades/ligue-as-coisas/ligue-as-coisas.html"><img src="/src/images/buttons/navegacao/voltar-branco.svg" alt="Botão voltar"></a>
+            <a href="/index.html"><img src="/src/images/buttons/navegacao/home-branco.svg" alt="Botão home"></a>
+            <a><img src="/src/images/buttons/audiodescricao-branco.svg" alt="Botão voltar"></a>
+        </header>
+
+        <section class="selecao-jogos">
+            <p style="color: #B9B9B9; font-family: 'Poppins'; font-style: normal;
+            font-weight: 400; font-size: 30px; line-height: 26px;"> Ligue os animais correspondentes </p>
+        </section>
+
+        <div class="containerLigue">
+            <div class="coluna1">
+                <img src="animal1.png" alt="animal1">
+                <img src="animal2.png" alt="animal2">
+                <img src="animal3.png" alt="animal3">
+                <img src="animal4.png" alt="animal4">
+                <img src="animal5.png" alt="animal5">
+            </div>
+            <section class="canvas">
+                <canvas id="canvas"></canvas>
+            </section>
+            <div class="coluna2" id="coluna2">
+
+            </div>
+        </div>
+                
+
+    </main>
+    <script type="module" src="ligue-animais.js"></script>
+</body>
+</html>

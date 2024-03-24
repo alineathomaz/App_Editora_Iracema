@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iracema - Colorir - Faz e Refaz</title>
+
+    <link rel="stylesheet" href="/src/css/reset.css">
+    <link rel="stylesheet" href="colorir-casinha.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="container">
+           
+            <header class="navegacao">
+                <a href="../atividades-cp.html"><img src="/src/images/buttons/navegacao/voltar-branco.svg"
+                        alt="Botão voltar"></a>
+                <a href="/index.html"><img src="/src/images/buttons/navegacao/home-branco.svg"
+                        alt="Botão home"></a>
+                <a><img src="/src/images/buttons/audiodescricao-branco.svg" alt="Botão audiodescrição"></a>
+                <a id="downloadLink" download="meu-desenho.jpeg"><img src="/src/images/buttons/botao-download-branco.svg" alt="Botão download" id="canvasImage"></a>
+            </header>
+            <div class="paint-modes">
+                <div class="pinceis">
+                    <button class="selected" name="pincel">
+                        <img src="/src/images/quadro-digital/buttons/modes/pincel-ativo.svg"
+                            alt="Botão de seleção do pincel">
+                    </button>
+                    <button name="balde-tinta">
+                        <img src="/src/images/quadro-digital/buttons/modes/balde-tinta.svg"
+                            alt="Botão de seleção do balde de tinta">
+                    </button>
+                    <button name="borracha">
+                        <img src="/src/images/quadro-digital/buttons/modes/borracha.svg"
+                            alt="Botão de seleção da borracha">
+                    </button>
+                </div>
+                <input type="range" min="2" max="50" name="tamanho-pincel" id="tamanho-pincel" value="2">
+            </div>
+
+            <div class="container-canvas">
+                <canvas class="canvas" id="canvas"></canvas>
+            </div>
+
+            <div class="paint-colors">
+                <button name="laranja">
+                    <img src="laranja.svg"
+                        alt="Botao de seleção laranja">
+                </button>
+                <button name="salmon">
+                    <img src="salmon.svg"
+                        alt="Botao de seleção salmon">
+                </button>
+                <button name="rosa">
+                    <img src="rosa.svg"
+                        alt="Botao de seleção rosa">
+                </button>
+                <button name="verde">
+                    <img src="verde.svg"
+                        alt="Botao de seleção verde">
+                </button>
+                <button name="azul">
+                    <img src="azul.svg"
+                        alt="Botao de seleção azul">
+                </button>
+                <button name="amarelo">
+                    <img src="amarelo.svg"
+                        alt="Botao de seleção amarelo">
+                </button>
+            </div>
+
+        </div>
+    </main>
+    <script type="module" src="/src/js/quadro-digital/quadro.js"></script>
+</body>
+
+</html>

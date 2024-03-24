@@ -1,0 +1,135 @@
+.main {
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    aspect-ratio: 1340 / 800;
+}
+
+.main .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1340 / 800;
+}
+
+.main .container .main-image {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .navegacao {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 6%;
+    left: 3%;
+    width: 5%;
+    height: 30%;
+    gap: 1%;
+}
+
+.main .container .navegacao a {
+    width: 100%;
+    height: 25%;
+}
+
+.main .container .navegacao a img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .paint-modes {
+    position: absolute;
+    bottom: 15%;
+    left: 3%;
+    width: 8%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    background-image: url(../images/quadro-digital/seletor-pinceis.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main .container .paint-modes .pinceis {
+    display: flex;
+    flex-direction: column;
+    width: 67%;
+    height: 90%;
+    gap: 2%;
+    margin-left: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .container .paint-modes .pinceis button {
+    width: 75%;
+    height: 25%;
+}
+
+.main .container .paint-modes .pinceis button img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .paint-modes input {
+    appearance: slider-vertical;
+    transform: rotate(180deg);
+    width: 1%;
+    height: 61%;
+    margin-right: 15%;
+}
+
+.main .container .container-canvas {
+    position: absolute;
+    top: 6%;
+    left: 10.3%;
+    width: 87.9%;
+    height: 85.8%;
+}
+
+.main .container .paint-colors {
+    position: absolute;
+    bottom: 10%;
+    z-index: 1;
+    left: 14%;
+    width: 80%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    gap: .5%;
+}
+
+.main .container .paint-colors button {
+    width: 8%;
+    height: 72%;
+}
+
+.main .container .paint-colors button:nth-child(odd) {
+    transform: translateY(10%);
+}
+
+.main .container .paint-colors button:nth-child(even) {
+    transform: translateY(-10%);
+}
+
+.main .container .paint-colors button img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container .paint-colors button.selected img {
+    transform: scale(1.4);
+    border-bottom: 3px solid #fff;
+}
+
+canvas{
+    background-image: url(casinha.svg);  
+    background-size: cover;
+}

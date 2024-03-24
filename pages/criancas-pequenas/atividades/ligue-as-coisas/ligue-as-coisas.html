@@ -5,57 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iracema - Ligue as coisas</title>
 
-    <link rel="stylesheet" href="../../../../src/css/reset.css">
-    <link rel="stylesheet" href="../../../../src/css/ligue-as-coisas.css">
+    <link rel="stylesheet" href="/src/css/reset.css">
+    <link rel="stylesheet" href="/pages/criancas-pequenas/atividades/ligue-as-coisas/ligue-as-coisas.css">
 </head>
 <body>
     <main class="main">
         <header class="navegacao">
-            <a href="../atividades-cp.html"><img src="../../../../src/images/buttons/navegacao/voltar-branco.svg" alt="Botão voltar"></a>
-            <a href="../../../../index.html"><img src="../../../../src/images/buttons/navegacao/home-branco.svg" alt="Botão home"></a>
-            <a><img src="../../../../src/images/buttons/audiodescricao-branco.svg" alt="Botão voltar"></a>
+            <a href="../atividades-cp.html"><img src="/src/images/buttons/navegacao/voltar-branco.svg" alt="Botão voltar"></a>
+            <a href="/index.html"><img src="/src/images/buttons/navegacao/home-branco.svg" alt="Botão home"></a>
+            <a><img src="/src/images/buttons/audiodescricao-branco.svg" alt="Botão voltar"></a>
         </header>
 
-        <section class="selecao-jogos">
-            <img src="../../../../src/images/ligue-as-coisas/ligue-as-coisas.svg" alt="Imagem indicando para selecionar o jogo">
-
+        <section class="selecao-ligue">
+            
+            <img src="/src/images/ligue-as-coisas/ligue-as-coisas.svg" alt="Imagem indicando para selecionar o jogo" class="img-ligue">
+             
             <div class="selecao-modo">
-                <a><img src="../../../../src/images/ligue-as-coisas/buttons/animais.svg" alt="Botão de seleção do jogo de animais"></a>
-                <a><img src="../../../../src/images/ligue-as-coisas/buttons/formas.svg" alt="Botão de seleção do jogo de formas"></a>
-                <a><img src="../../../../src/images/ligue-as-coisas/buttons/objetos.svg" alt="Botão de seleção do jogo de objetos"></a>
-                <a><img src="../../../../src/images/ligue-as-coisas/buttons/letras.svg" alt="Botão de seleção do jogo de letras"></a>
-                <a><img src="../../../../src/images/ligue-as-coisas/buttons/numeros.svg" alt="Botão de seleção do jogo de numeros"></a>
+                <a href="/pages/criancas-pequenas/atividades/ligue-as-coisas/ligue-animais/ligue-animais.html"><img src="/src/images/ligue-as-coisas/buttons/animais.svg" alt="Botão de seleção do jogo de animais"></a>
+                <a href="/pages/criancas-pequenas/atividades/ligue-as-coisas/ligue-formas/ligue-formas.html"><img src="/src/images/ligue-as-coisas/buttons/formas.svg" alt="Botão de seleção do jogo de formas"></a>
+                <a href="/pages/criancas-pequenas/atividades/ligue-as-coisas/ligue-objetos/ligue-objetos.html"><img src="/src/images/ligue-as-coisas/buttons/objetos.svg" alt="Botão de seleção do jogo de objetos"></a>
             </div>
+
+            <div class="selecao-modo" style="margin-left: 4%; gap:20%">
+                <a><img src="/src/images/ligue-as-coisas/buttons/letras.svg" alt="Botão de seleção do jogo de letras"></a>
+                <a><img src="/src/images/ligue-as-coisas/buttons/numeros.svg" alt="Botão de seleção do jogo de numeros"></a>
+            </div>
+
         </section>
-
-        <section class="canvas hidden">
-            <canvas id="canvas"></canvas>
-        </section>
-
-        <section id="animais" class="hidden">
-            <img src="../../../../src/images/ligue-as-coisas/animais/cabra.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/cachorro.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/cavalo.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/elefante.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/galo.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/gato.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/hamster.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/leao.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/ovelha.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/panda.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/pato.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/pintinho.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/porco.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/sapo.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/urso.svg">
-            <img src="../../../../src/images/ligue-as-coisas/animais/vaca.svg">
-        </section>
-
-
-
-
 
     </main>
-    <script type="module" src="../../../../src/js/ligue-as-coisas/ligue-as-coisas.js"></script>
+    <script type="module" src="ligue-as-coisas.js"></script>
 </body>
 </html>
