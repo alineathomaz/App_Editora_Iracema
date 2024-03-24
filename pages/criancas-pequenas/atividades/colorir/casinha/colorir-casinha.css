@@ -90,46 +90,41 @@
     position: absolute;
     top: 6%;
     left: 10.3%;
-    width: 87.9%;
-    height: 85.8%;
+    width: 81.9%;
+    height: 75.8%;
 }
 
 .main .container .paint-colors {
     position: absolute;
-    bottom: 10%;
+    bottom: 6%;
     z-index: 1;
-    left: 14%;
-    width: 80%;
-    height: 10%;
+    left: 25%;
+    width: 50%;
+    height: 8%;
     display: flex;
     justify-content: center;
-    gap: .5%;
+    gap: 5%;
 }
 
 .main .container .paint-colors button {
-    width: 8%;
-    height: 72%;
-}
-
-.main .container .paint-colors button:nth-child(odd) {
-    transform: translateY(10%);
-}
-
-.main .container .paint-colors button:nth-child(even) {
-    transform: translateY(-10%);
+    width: 9.5%;
+    height: 100%;
 }
 
 .main .container .paint-colors button img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
 }
 
 .main .container .paint-colors button.selected img {
     transform: scale(1.4);
-    border-bottom: 3px solid #fff;
 }
 
 canvas{
-    background-image: url(casinha.svg);  
-    background-size: cover;
+    /* background-image: url(casinha.svg);  
+    background-size: cover; */
+    border: 1px solid black;
+    z-index: 0;
 }

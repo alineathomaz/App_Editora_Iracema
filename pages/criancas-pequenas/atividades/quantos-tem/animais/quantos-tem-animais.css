@@ -1,34 +1,83 @@
 .main .topo .pinte{
     display: flex;
     flex-direction: column;
-    align-items: center;  
-    margin-right: 5%;  
+    align-items: center;
+    width: 47%;
 }
 
-.main .jogo{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 5%;
+.main .topo .pinte img {
+    width: 100%;
 }
 
 .main .topo .btn{
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
     gap: 10%;
-    margin-right: 5%;
+}
+
+.main .topo .btn a {
+    width: 57%;
+}
+
+.main .topo .btn a img {
+    width: 100%;
 }
 
 .main .topo{
     position: absolute;
-    width: 80%;
+    width: 75%;
     display: flex;
     flex-direction:row;
     justify-content: flex-end;
     gap: 15%;
-    margin-top: 3%;
-    margin-left: 20%
+    top: 3%;
+    left: 20%
+}
+
+
+.main .jogo{
+    width: 80%;
+    height: 75%;
+    justify-self: center;
+    position: absolute;
+    top: 23%;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.main .jogo .imagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 16%;
+}
+
+.main .jogo .imagem img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .jogo .imagem:nth-child(odd) {
+    transform: translateY(-25%);
+}
+
+.main .jogo .imagem:nth-child(even) {
+    transform: translateY(25%);
+    flex-direction: column-reverse;
+}
+
+.main .jogo .imagem span {
+    font-size: 4.7rem;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+}
+
+.main .jogo .imagem span.hidden {
+    opacity: 0;
 }
