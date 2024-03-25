@@ -1,5 +1,4 @@
-import { paintModes, tintas, canvas, contextCanvas, containerCanvas, canvasWidth, canvasHeight, tamanhoPincel, coresTinta } from "./variaveis.js"
-import { fillShape } from "./balde.js"
+import { paintModes, tintas, canvas, contextCanvas, containerCanvas, canvasWidth, canvasHeight, coresTinta } from "./variaveis.js"
 
 const imagemCasinha = new Image()
 

@@ -12,7 +12,7 @@ desenhos.forEach(desenho => {
             return
         } else {
             count++
-            desenho.firstElementChild.src = 'galinha-colorido.svg'
+            desenho.firstElementChild.src = './galinha-colorido.svg'
             desenho.firstElementChild.name = 'colorido'
             desenho.lastElementChild.innerHTML = count;
             desenho.lastElementChild.classList.remove('hidden');

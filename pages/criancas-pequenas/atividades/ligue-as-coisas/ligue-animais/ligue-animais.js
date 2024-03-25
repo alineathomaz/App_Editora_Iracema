@@ -14,7 +14,7 @@ const renderizaTela = () => {
             randomNumber = randomizer(animaisColuna2.length);
         }
         array.push(randomNumber);
-        document.getElementById("coluna2").innerHTML += `<img src="${animaisColuna2[randomNumber]}"/>`;
+        document.getElementById("coluna2").innerHTML += `<img src="./${animaisColuna2[randomNumber]}"/>`;
     }
 }
 
