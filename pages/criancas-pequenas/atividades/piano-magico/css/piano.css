@@ -1,0 +1,240 @@
+.main {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    background-image: url(../fundo-piano1.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    aspect-ratio: 1600 / 840;
+}
+
+.main  .background {
+    width: 100%;
+    height: 100%;
+}
+
+.main .navigation {
+    position: absolute;
+    top: 2.75%;
+    left: 2%;
+    display: flex;
+    gap: 2%;
+    width: 15%;
+}
+
+.main .navigation a {
+    width: 30%;
+    display: flex;
+}
+
+.main .navigation a img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .piano {
+    background-image: url(../corpo-piano.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    bottom: 8%;
+}
+
+.main .piano .animais {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 9%;
+    left: 19%;
+    width: 52%;
+    height: 23%;
+    z-index: 1;
+}
+
+.main .piano .animais .seletor-animais {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1.5%;
+    width: 100%;
+    height: 100%;
+    background-image: url(../fundo-animais.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+.main .piano .animais .setas {
+    width: 3%;
+    height: 30%;
+}
+
+.main .piano .animais .setas img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .piano .animais .seletor-animais button {
+    width: 11.775%;
+}
+
+.main .piano .animais .seletor-animais button img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .piano .animais .seletor-animais button:active img {
+    transform: scale(1.2);
+}
+
+.main .piano .animais .seletor-animais button:active .scale-1 {
+    transform: scale(1.3);
+}
+
+.main .piano .animais .seletor-animais button:active .scale-2 {
+    transform: scale(1.4);
+}
+
+.main .piano .animais .seletor-animais button:active .scale-3 {
+    transform: scale(1.5);
+}
+
+.main .piano .animais .seletor-animais button:nth-child(odd) {
+    transform: translateY(-12%);
+}
+
+.main .piano .animais .seletor-animais button:nth-child(even) {
+    transform: translateY(12%);
+}
+
+.main .piano .animais .seletor-animais button.hidden {
+    display: none;
+}
+
+.main .piano .instrumentos {
+    position: absolute;
+    top: 35%;
+    left: 23%;
+    width: 43%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main .piano .instrumentos button {
+    width: 13%;
+}
+
+.main .piano .instrumentos button img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .piano .instrumentos button:active img {
+    transform: scale(1.2);
+}
+
+.main .piano .teclas {
+    position: absolute;
+    bottom: 14%;
+    left: 18.18%;
+    width: 61%;
+    height: 32%;
+    display: flex;
+    gap: .5%;
+    z-index: 1;
+}
+
+.main .piano .teclas button {
+    max-width: 14%;
+}
+
+.main .piano .teclas button img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .piano .teclas button:active img {
+    transform: scale(1.1);
+}
+
+.scale-1 {
+    transform: scale(1.1);
+}
+
+.scale-2 {
+    transform: scale(1.2);
+}
+
+.scale-3 {
+    transform: scale(1.3);
+}
+
+.main .personagem {
+    position: absolute;
+    background-image: url(../personagem.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 28%;
+    height: 80%;
+    right: 10%;
+    bottom: 1%;
+    z-index: 0;
+}
+
+@media (max-height: 425px) {
+    .main {
+        aspect-ratio: 1600 / 690;
+        background-image: url(../fundo-piano1.svg);
+        background-size: cover;
+    }
+
+    .main .piano {
+        width: 85%;
+        height: 85%;
+        position: absolute;
+        bottom: 8%;
+    }
+
+    .main .piano .animais {
+        top: 9%;
+        left: 25%;
+        width: 43%;
+        height: 21%;
+    }
+
+    .main .piano .instrumentos {
+        top: 34%;
+        left: 29%;
+        width: 35%;
+    }
+
+    .main .piano .teclas {
+        bottom: 14%;
+        left: 22.9%;
+        width: 53%;
+        height: 31%;
+    }
+
+    .main .personagem {
+        height: 100%;
+    }
+}
+
+@media (min-width: 1780px) {
+    .main {
+        aspect-ratio: 1600 / 800;
+    }
+}

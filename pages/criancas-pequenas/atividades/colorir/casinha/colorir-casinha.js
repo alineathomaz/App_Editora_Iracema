@@ -146,7 +146,7 @@ function desenhaCasinha() {
 desenhaCasinha()
 configuracaoInicial()
 
-/* // Selecione o canvas e a imagem
+// Selecione o canvas e a imagem
 var canvasImage = document.getElementById('canvasImage');
 var downloadLink = document.getElementById('downloadLink');
 var ctx = canvas.getContext('2d');
@@ -159,5 +159,9 @@ canvasImage.addEventListener('click', function() {
     var dataURL = canvas.toDataURL('image/jpeg');
     // Atribua o URL de dados ao atributo href do link
     downloadLink.href = dataURL;
-}); */
+});
+
+const mainScreen = document.querySelector('.main')
+
+mainScreen.addEventListener('touchmove', event => event.preventDefault());
 

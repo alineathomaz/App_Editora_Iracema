@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     for (var i = 0; i < 4; i++) {
         var piece = new fabric.Image.fromURL('gato' + (i + 1) + '.png', function(img) {
             canvas.add(img.set({
-                width: 500,
-                height: 500,
+                width: 210,
+                height: 210,
                 left: Math.random() * 300,
                 top: Math.random() * 300,
                 selectable: true,

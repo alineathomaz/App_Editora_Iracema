@@ -62,4 +62,11 @@ canvas.addEventListener('mouseup', event => drawingStopped(event))
 canvas.addEventListener('mousemove', event => drawing(event))
 canvas.addEventListener('touchstart', event => drawingStart(event.changedTouches[0]))
 canvas.addEventListener('touchend', event => drawingStopped(event.changedTouches[0]))
-canvas.addEventListener('touchmove', event => drawing(event.changedTouches[0]))
+canvas.addEventListener('touchmove', event => {
+    event.preventDefault()
+    drawing(event.changedTouches[0])
+})
+
+const mainScreen = document.querySelector('.main')
+
+mainScreen.addEventListener('touchmove', event => event.preventDefault());

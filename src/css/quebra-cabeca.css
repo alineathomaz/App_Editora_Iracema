@@ -25,6 +25,8 @@
 }
 
 .main .main-image {
+    position: absolute;
+    top: 5%;
     width: 30%;
     height: 12%;
 }

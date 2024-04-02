@@ -108,3 +108,7 @@ voltar.addEventListener('click', event => {
         currentPosition = 0
     }
 })
+
+const mainScreen = document.querySelector('.main')
+
+mainScreen.addEventListener('touchmove', event => event.preventDefault());

@@ -46,8 +46,10 @@ tintas.forEach(tinta => {
 
         const elementoSelecionado = document.querySelector('.paint-colors .selected')
         elementoSelecionado.classList.toggle('selected')
+        elementoSelecionado.firstElementChild.src = `../../../../src/images/quadro-digital/buttons/paints/${elementoSelecionado.name}.svg`
 
         tinta.classList.toggle('selected')
+        tinta.firstElementChild.src = `../../../../src/images/quadro-digital/buttons/paints/${tinta.name}-ativo.svg`
         corSelecionada = cores[tinta.name]
         corSelecionadaBaldeTinta = tinta.name
 
@@ -123,6 +125,7 @@ tamanhoPincel.addEventListener('change', () => {
 const selecionaCorInicial = () => {
     const corInicial = document.querySelector('.paint-colors button[name="vermelho"]')
     corInicial.classList.toggle('selected')
+    corInicial.firstElementChild.src = "../../../../src/images/quadro-digital/buttons/paints/vermelho-ativo.svg"
     corSelecionada = cores[corInicial.name]
     corSelecionadaBaldeTinta = corInicial.name
     contextCanvas.strokeStyle = corSelecionada
@@ -139,9 +142,13 @@ ctx.fillStyle = '#FFFFFF'; // Define a cor de fundo como branco
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 // Evento de clique na imagem
-canvasImage.addEventListener('click', function() {
+canvasImage.addEventListener('click', function () {
     // Converta o conteúdo do canvas em um URL de dados
     var dataURL = canvas.toDataURL('image/jpeg');
     // Atribua o URL de dados ao atributo href do link
     downloadLink.href = dataURL;
-  });
+});
+
+const mainScreen = document.querySelector('.main')
+
+mainScreen.addEventListener('touchmove', event => event.preventDefault());

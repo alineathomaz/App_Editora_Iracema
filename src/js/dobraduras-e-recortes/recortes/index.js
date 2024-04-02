@@ -25,3 +25,7 @@ voltar.addEventListener('click', event => {
         selecaoRecortes.classList.toggle('hidden')
     }
 })
+
+const mainScreen = document.querySelector('.main')
+
+mainScreen.addEventListener('touchmove', event => event.preventDefault());
