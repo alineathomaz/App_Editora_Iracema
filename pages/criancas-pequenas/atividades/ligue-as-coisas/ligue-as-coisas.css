@@ -100,11 +100,11 @@
     gap: 4.75%;
     display: flex;
     flex-direction: column;
-    width: 7%;
+    width: 10%;
     height: 75%;
     position: absolute;
     z-index: -1;
-}
+} 
 
 .main .containerLigue .coluna1 {
     left: 6%;
@@ -113,6 +113,77 @@
 .main .containerLigue .coluna2 {
     right: 6%;
 }
+
+.main .containerLigue .coluna1 .animais, 
+.main .containerLigue .coluna2 .animais {
+    width: 100%;
+    height: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .containerLigue .coluna1 .animais img, 
+.main .containerLigue .coluna2 .animais img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .fim-de-jogo, .main .checkmark {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: #dddddd9f;
+}
+
+.main .fim-de-jogo {
+    flex-direction: column;
+}
+
+.main .checkmark {
+    background: none;
+}
+
+.main .fim-de-jogo img {
+    width: 55%;
+    height: 35%;
+}
+
+.main .checkmark img {
+    width: 20%;
+    height: 20%;
+}
+
+.main .fim-de-jogo .navegacao-final {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 15%;
+    height: 8%;
+}
+
+.main .fim-de-jogo .navegacao-final a {
+    width: 25%;
+    height: 100%;
+}
+
+.main .fim-de-jogo .navegacao-final a img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .fim-de-jogo.hidden, .main .checkmark.hidden {
+    z-index: -3;
+    display: none;
+    opacity: 0;
+}
+
+
 
 @media (min-width: 1780px) {
     .main {

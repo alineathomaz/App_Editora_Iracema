@@ -1,6 +1,13 @@
-var animaisColuna2 = ['animal1.png', 'animal2.png', 'animal3.png', 'animal4.png', 'animal5.png'];
+var animaisColuna2 = ['animal1.svg', 'animal2.svg', 'animal3.svg', 'animal4.svg', 'animal5.svg'];
 const animaisSelecionados = ['cachorro', 'gato', 'urso', 'elefante', 'pato']
-let lastPositionX, lastPositionY;
+let lastPositionX, lastPositionY, countWin;
+let cachorroConectado = false
+let gatoConectado = false
+let ursoConectado = false
+let elefanteConectado = false
+let patoConectado = false
+
+countWin = 0;
 
 function randomizer(number) {
     return Math.floor(Math.random() * number)
@@ -18,7 +25,9 @@ const renderizaTela = () => {
             randomNumber = randomizer(animaisColuna2.length);
         }
         organizadorColuna2.push(randomNumber);
-        document.getElementById("coluna2").innerHTML += `<img src="./${animaisColuna2[randomNumber]}" name="${animaisSelecionados[randomNumber]}"/>`;
+        document.getElementById("coluna2").innerHTML += `<div class="animais">
+                                                            <img src="./${animaisColuna2[randomNumber]}" name="${animaisSelecionados[randomNumber]}"/>
+                                                        </div>`;
         ordemAnimaisColuna2.push(animaisSelecionados[randomNumber]);
     }
 }
@@ -78,6 +87,8 @@ canvas.addEventListener('mousedown', event => {
 })
 canvas.addEventListener('mouseup', event => {
     checaLigacao(event);
+    mudaCorStroke();
+    checaVitoria();
     positionInitial.pop()
     drawingStopped(event)
 })
@@ -87,6 +98,8 @@ canvas.addEventListener('touchstart', event => {
 })
 canvas.addEventListener('touchend', event => {
     checaLigacao(event.changedTouches[0]);
+    mudaCorStroke();
+    checaVitoria();
     positionInitial.pop()
     drawingStopped(event.changedTouches[0])
 })
@@ -99,87 +112,11 @@ const mainScreen = document.querySelector('.main')
 
 //mainScreen.addEventListener('touchmove', event => event.preventDefault());
 
+
 console.log(containerCanvas)
 console.log(containerCanvas.offsetLeft, containerCanvas.offsetTop)
-console.log(window)
 const primeiraColuna = {}
 const segundaColuna = {}
-
-
-function criaColunas() {
-    const animaisRenderizadosColuna1 = document.querySelectorAll('.coluna1 img')
-    const animaisRenderizadosColuna2 = document.querySelectorAll('.coluna2 img')
-    console.log(animaisRenderizadosColuna1, animaisRenderizadosColuna2)
-    console.log("heights for animal 1 ", animaisRenderizadosColuna1[0].clientHeight, animaisRenderizadosColuna1[0].naturalHeight, animaisRenderizadosColuna1[0].height, animaisRenderizadosColuna1[0].offsetHeight)
-    console.log("positions x ", animaisRenderizadosColuna1[0].x, animaisRenderizadosColuna1[0].offsetParent.offsetLeft)
-    console.log("positions Y ", animaisRenderizadosColuna1[0].y, animaisRenderizadosColuna1[0].offsetParent.offsetTop)
-    console.log("offset canvas ", canvasOffsetLeft, canvasOffsetTop)
-    for (let index = 0; index < 5; index++) {
-        let offsetTopColuna1 = animaisRenderizadosColuna1[index].offsetParent.offsetTop
-        let offsetTopColuna2 = animaisRenderizadosColuna2[index].offsetParent.offsetTop
-        let positionVerticalEixo
-        
-        if(index === 0) {
-            positionVerticalEixo = animaisRenderizadosColuna1[index+1].y - animaisRenderizadosColuna1[index].y
-        } else {
-            positionVerticalEixo = animaisRenderizadosColuna1[index].y - animaisRenderizadosColuna1[index-1].y
-        }
-
-        console.log('valor do gap entre os elementos: ', positionVerticalEixo);
-        console.log('offset da div: ', offsetTopColuna1, offsetTopColuna2);
-        let posicaoX1
-        let posicaoY1
-        let width1 = animaisRenderizadosColuna1[index].width
-        let height1 = animaisRenderizadosColuna1[index].height
-        if(window.innerWidth <= 1010) {
-            posicaoX1 = animaisRenderizadosColuna1[index].offsetParent.offsetLeft - canvasOffsetLeft
-            if(index === 0) {
-                posicaoY1 = animaisRenderizadosColuna1[index].offsetParent.offsetTop - canvasOffsetTop
-            } else {
-                let indexador2 = 'position'+(index-1)
-                posicaoY1 = primeiraColuna[indexador2].y + 18 + primeiraColuna[indexador2].height
-            }
-            console.log('offsets index 0 a 4 ', animaisRenderizadosColuna1[index].offsetTop, canvasOffsetTop, posicaoY1)
-        } else {
-            posicaoX1 = animaisRenderizadosColuna1[index].x - canvasOffsetLeft
-            posicaoY1 = animaisRenderizadosColuna1[index].y - canvasOffsetTop
-        }
-        
-        let posicaoX2
-        let posicaoY2
-        let width2 = animaisRenderizadosColuna2[index].width
-        let height2 = animaisRenderizadosColuna2[index].height
-
-        if(window.innerWidth <= 1010) {
-            posicaoX2 = animaisRenderizadosColuna2[index].offsetParent.offsetLeft - canvasOffsetLeft
-            if(index === 0) {
-                posicaoY2 = animaisRenderizadosColuna2[index].offsetParent.offsetTop - canvasOffsetTop
-            } else {
-                let indexador3 = 'position'+(index-1)
-                posicaoY2 = segundaColuna[indexador3].y + 18 + segundaColuna[indexador3].height
-            }
-        } else {
-            posicaoX2 = animaisRenderizadosColuna2[index].x - canvasOffsetLeft
-        }
-        
-        let indexador = 'position'+index
-
-        console.log("heights from each position ", index, height1, height2)
-        
-        primeiraColuna[indexador] = {x: posicaoX1, y: posicaoY1, width: width1, height: height1}
-        segundaColuna[indexador] = {x: posicaoX2, y: posicaoY2, width: width2, height: height2}
-
-        context.fillStyle = '#0000000a'
-        context.fillRect(posicaoX1, posicaoY1, width1, height1)
-        context.fillRect(posicaoX2, posicaoY2, width2, height2)
-    }
-}
-
-criaColunas()
-    
-console.log(animaisRenderizadosColuna1, animaisRenderizadosColuna2)
-console.log(primeiraColuna, segundaColuna)
-
 
 const checaLigacao = (evento) => {
 
@@ -188,56 +125,91 @@ const checaLigacao = (evento) => {
     let posicaoFinalX = evento.pageX - containerCanvas.offsetLeft;
     let posicaoFinalY = evento.pageY - containerCanvas.offsetTop;
     let posicaoTeste;
-    let cachorroConectado
-    let gatoConectado
-    let ursoConectado
-    let elefanteConectado
-    let patoConectado
 
     if (posicaoInicialX >= primeiraColuna.position0.x && posicaoInicialX <= primeiraColuna.position0.width + primeiraColuna.position0.x) {
         if (posicaoInicialY >= primeiraColuna.position0.y && posicaoInicialY <= primeiraColuna.position0.height + primeiraColuna.position0.y) {
             posicaoTeste = 'cachorro'
-            cachorroConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
-            if (!cachorroConectado) {
-                window.alert('Não conectou o cachorro')
+            if (cachorroConectado) {
+                window.alert('Animal já foi conectado')
+                return
             } else {
-                window.alert('Parabéns')
+                cachorroConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
+                if (!cachorroConectado) {
+                    window.alert('Não conectou o cachorro')
+                } else {
+                    mostraValidacao();
+                    countWin++
+                }
             }
         } else if (posicaoInicialY >= primeiraColuna.position1.y && posicaoInicialY <= primeiraColuna.position1.height + primeiraColuna.position1.y) {
             posicaoTeste = 'gato'
-            gatoConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
-            if (!gatoConectado) {
-                window.alert('Não conectou o gato')
+            if (gatoConectado) {
+                window.alert('Animal já foi conectado')
+                return
             } else {
-                window.alert('Parabéns')
+                gatoConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
+                if (!gatoConectado) {
+                    window.alert('Não conectou o gato')
+                } else {
+                    mostraValidacao();
+                    countWin++
+                }
             }
         } else if (posicaoInicialY >= primeiraColuna.position2.y && posicaoInicialY <= primeiraColuna.position2.height + primeiraColuna.position2.y) {
             posicaoTeste = 'urso'
-            ursoConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
-            if (!ursoConectado) {
-                window.alert('Não conectou o urso')
+            if (ursoConectado) {
+                window.alert('Animal já foi conectado')
+                return
             } else {
-                window.alert('Parabéns')
+                ursoConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
+                if (!ursoConectado) {
+                    window.alert('Não conectou o urso')
+                } else {
+                    mostraValidacao();
+                    countWin++
+                }
             }
         } else if (posicaoInicialY >= primeiraColuna.position3.y && posicaoInicialY <= primeiraColuna.position3.height + primeiraColuna.position3.y) {
             posicaoTeste = 'elefante'
-            elefanteConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
-            if (!elefanteConectado) {
-                window.alert('Não conectou o elefante')
+            if (elefanteConectado) {
+                window.alert('Animal já foi conectado')
+                return
             } else {
-                window.alert('Parabéns')
+                elefanteConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
+                if (!elefanteConectado) {
+                    window.alert('Não conectou o elefante')
+                } else {
+                    mostraValidacao();
+                    countWin++
+                }
             }
         } else if (posicaoInicialY >= primeiraColuna.position4.y && posicaoInicialY <= primeiraColuna.position4.height + primeiraColuna.position4.y) {
             posicaoTeste = 'pato'
-            patoConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
-            if (!patoConectado) {
-                window.alert('Não conectou o pato')
+            if (patoConectado) {
+                window.alert('Animal já foi conectado')
+                return
             } else {
-                window.alert('Parabéns')
+
+                patoConectado = checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste);
+                if (!patoConectado) {
+                    window.alert('Não conectou o pato')
+                } else {
+                    mostraValidacao();
+                    countWin++
+                }
             }
         }
     }
 
+}
+
+function mostraValidacao() {
+    if(countWin === 4) {
+        return
+    }
+    let checkmark = document.getElementById('checkmark');
+    checkmark.classList.toggle('hidden');
+    setTimeout(() => { checkmark.classList.toggle('hidden'); }, 1000);
 }
 
 function checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste) {
@@ -275,3 +247,59 @@ function checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste) {
         }
     }
 }
+
+const itensColuna1 = document.querySelectorAll('.coluna1 .animais')
+const itensColuna2 = document.querySelectorAll('.coluna2 .animais')
+
+console.log(itensColuna1, itensColuna2)
+
+const criaColuna = () => {
+    for (let index = 0; index < 5; index++) {
+        let width1 = itensColuna1[index].clientWidth
+        let height1 = itensColuna1[index].clientHeight
+        let posicaoX1 = itensColuna1[index].offsetParent.offsetLeft - canvasOffsetLeft
+        let posicaoY1 = itensColuna1[index].offsetParent.offsetTop + itensColuna1[index].offsetTop - canvasOffsetTop
+
+        let width2 = itensColuna2[index].clientWidth
+        let height2 = itensColuna2[index].clientHeight
+        let posicaoX2 = itensColuna2[index].offsetParent.offsetLeft - canvasOffsetLeft
+        let posicaoY2 = itensColuna2[index].offsetParent.offsetTop + itensColuna2[index].offsetTop - canvasOffsetTop
+
+        let indexador = 'position' + index
+
+        primeiraColuna[indexador] = { x: posicaoX1, y: posicaoY1, width: width1, height: height1 }
+        segundaColuna[indexador] = { x: posicaoX2, y: posicaoY2, width: width2, height: height2 }
+    }
+}
+
+criaColuna()
+
+const mudaCorStroke = () => {
+    switch (countWin) {
+        case 1:
+            context.strokeStyle = '#74BE21'
+            break;
+        case 2:
+            context.strokeStyle = '#F787BF'
+            break;
+        case 3:
+            context.strokeStyle = '#B66C1A'
+            break;
+        case 4:
+            context.strokeStyle = '#E72323'
+            break;
+        case 5:
+        default:
+            context.strokeStyle = '#000000'
+            break;
+    }
+}
+
+const checaVitoria = () => {
+    if (countWin === 5) {
+        document.getElementById('fim-de-jogo').classList.toggle('hidden')
+    } else {
+        return
+    }
+}
+

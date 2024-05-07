@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, orientation=portrait">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, orientation=portrait">
     <title>Iracema - Ligue as coisas</title>
 
     <link rel="stylesheet" href="../../../../../src/css/reset.css">
     <link rel="stylesheet" href="../ligue-as-coisas.css">
 </head>
+
 <body>
     <main class="main">
         <header class="navegacao">
-            <a href="../ligue-as-coisas.html"><img src="../../../../../src/images/buttons/navegacao/voltar-branco.svg" alt="Botão voltar"></a>
-            <a href="../../../../../index.html"><img src="../../../../../src/images/buttons/navegacao/home-branco.svg" alt="Botão home"></a>
+            <a href="../ligue-as-coisas.html"><img src="../../../../../src/images/buttons/navegacao/voltar-branco.svg"
+                    alt="Botão voltar"></a>
+            <a href="../../../../../index.html"><img src="../../../../../src/images/buttons/navegacao/home-branco.svg"
+                    alt="Botão home"></a>
             <a><img src="../../../../../src/images/buttons/audiodescricao-branco.svg" alt="Botão voltar"></a>
         </header>
 
@@ -22,11 +27,21 @@
 
         <div class="containerLigue">
             <div class="coluna1">
-                <img src="./animal1.png" alt="animal1" name="cachorro">
-                <img src="./animal2.png" alt="animal2" name="gato">
-                <img src="./animal3.png" alt="animal3" name="urso">
-                <img src="./animal4.png" alt="animal4" name="elefante">
-                <img src="./animal5.png" alt="animal5" name="pato">
+                <div class="animais">
+                    <img src="./animal1.svg" alt="animal1" name="cachorro">
+                </div>
+                <div class="animais">
+                    <img src="./animal2.svg" alt="animal2" name="gato">
+                </div>
+                <div class="animais">
+                    <img src="./animal3.svg" alt="animal3" name="urso">
+                </div>
+                <div class="animais">
+                    <img src="./animal4.svg" alt="animal4" name="elefante">
+                </div>
+                <div class="animais">
+                    <img src="./animal5.svg" alt="animal5" name="pato">
+                </div>
             </div>
             <section class="canvas">
                 <canvas id="canvas"></canvas>
@@ -35,9 +50,25 @@
 
             </div>
         </div>
-                
+
+        <section class="fim-de-jogo hidden" id="fim-de-jogo">
+            <img src="./parabens.svg" alt="Imagem com a escrita 'Parabéns'">
+            <div class="navegacao-final">
+                <a href="../ligue-as-coisas.html"><img
+                        src="../../../../../src/images/buttons/navegacao/voltar-branco.svg" alt="Botão voltar"></a>
+                <a href="../../../../../index.html"><img
+                        src="../../../../../src/images/buttons/navegacao/home-branco.svg" alt="Botão home"></a>
+                <a><img src="../../../../../src/images/buttons/audiodescricao-branco.svg" alt="Botão voltar"></a>
+            </div>
+        </section>
+
+        <section class="checkmark hidden" id="checkmark">
+            <img src="./checkmark.svg" alt="imagem de um sinal de correto">
+        </section>
+
 
     </main>
     <script type="module" src="./ligue-animais.js"></script>
 </body>
+
 </html>
