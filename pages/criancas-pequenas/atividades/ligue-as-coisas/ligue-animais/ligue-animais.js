@@ -248,8 +248,8 @@ function checaPosicaoFinal(posicaoFinalX, posicaoFinalY, posicaoTeste) {
     }
 }
 
-const itensColuna1 = document.querySelectorAll('.coluna1 .animais')
-const itensColuna2 = document.querySelectorAll('.coluna2 .animais')
+const itensColuna1 = document.querySelectorAll('.coluna1 .items')
+const itensColuna2 = document.querySelectorAll('.coluna2 .items')
 
 console.log(itensColuna1, itensColuna2)
 
@@ -296,7 +296,7 @@ const mudaCorStroke = () => {
 }
 
 const checaVitoria = () => {
-    if (countWin === 5) {
+    if (cachorroConectado && gatoConectado && ursoConectado && patoConectado && elefanteConectado) {
         document.getElementById('fim-de-jogo').classList.toggle('hidden')
     } else {
         return

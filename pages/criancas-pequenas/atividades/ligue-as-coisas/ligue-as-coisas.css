@@ -91,7 +91,6 @@
     left: 5%;
     width: 90%;
     height: 80%;
-    border: solid 3px black;
 }
 
 .main .containerLigue .coluna1,
@@ -104,7 +103,14 @@
     height: 75%;
     position: absolute;
     z-index: -1;
-} 
+}
+
+.main .containerLigue .coluna1.objetos,
+.main .containerLigue .coluna2.objetos {
+    height: 76%;
+    width: 6%;
+    gap: 1.5%;
+}
 
 .main .containerLigue .coluna1 {
     left: 6%;
@@ -114,8 +120,8 @@
     right: 6%;
 }
 
-.main .containerLigue .coluna1 .animais, 
-.main .containerLigue .coluna2 .animais {
+.main .containerLigue .coluna1 .items, 
+.main .containerLigue .coluna2 .items {
     width: 100%;
     height: 16%;
     display: flex;
@@ -123,8 +129,8 @@
     justify-content: center;
 }
 
-.main .containerLigue .coluna1 .animais img, 
-.main .containerLigue .coluna2 .animais img {
+.main .containerLigue .coluna1 .items img, 
+.main .containerLigue .coluna2 .items img {
     width: 100%;
     height: 100%;
 }
