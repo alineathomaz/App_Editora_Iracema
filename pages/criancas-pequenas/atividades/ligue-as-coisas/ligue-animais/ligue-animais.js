@@ -25,7 +25,7 @@ const renderizaTela = () => {
             randomNumber = randomizer(animaisColuna2.length);
         }
         organizadorColuna2.push(randomNumber);
-        document.getElementById("coluna2").innerHTML += `<div class="animais">
+        document.getElementById("coluna2").innerHTML += `<div class="items">
                                                             <img src="./${animaisColuna2[randomNumber]}" name="${animaisSelecionados[randomNumber]}"/>
                                                         </div>`;
         ordemAnimaisColuna2.push(animaisSelecionados[randomNumber]);
