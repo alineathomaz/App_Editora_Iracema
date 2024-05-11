@@ -1,7 +1,6 @@
 import { cores } from "./objetos/cores.js"
 import { paintModes, tintas, canvas, contextCanvas, containerCanvas, canvasWidth, canvasHeight, tamanhoPincel } from "./variaveis/variaveis.js"
 import { drawingSpray } from "./funcoes/drawingSpray.js"
-import { drawing } from "./funcoes/drawing.js"
 import { fillShape } from "./funcoes/balde.js"
 
 let modoSelecionado = 'pincel'
@@ -9,11 +8,15 @@ let corSelecionada = ''
 let corSelecionadaBaldeTinta = ''
 let radius = 2;
 let dragging = false;
-
+let lastPositionX;
+let lastPositionY;
+const canvasOffsetLeft = containerCanvas.offsetLeft
+const canvasOffsetTop = containerCanvas.offsetTop
 
 canvas.width = canvasWidth
 canvas.height = canvasHeight
 canvas.style.backgroundColor = '#fff'
+
 
 paintModes.forEach(paintMode => {
     paintMode.addEventListener('click', () => {
@@ -66,9 +69,11 @@ tintas.forEach(tinta => {
 let drawingStart = function (event) {
 
     dragging = true;
-    let positionX = event.clientX - containerCanvas.offsetLeft;
-    let positionY = event.clientY - containerCanvas.offsetTop;
-    contextCanvas.moveTo(positionX, positionY)
+    let positionX = event.clientX - canvasOffsetLeft;
+    let positionY = event.clientY - canvasOffsetTop;
+    lastPositionX = positionX
+    lastPositionY = positionY
+
     if (modoSelecionado === 'spray') {
         drawingSpray(event, radius, dragging)
     } else {
@@ -80,6 +85,24 @@ let drawingStopped = function () {
     dragging = false;
     contextCanvas.beginPath()
 }
+
+const drawing = function (event, dragging) {
+
+    let positionX = event.pageX - canvasOffsetLeft
+    let positionY = event.pageY - canvasOffsetTop
+    if (dragging == true) {
+        contextCanvas.lineCap = 'round'
+        contextCanvas.beginPath()
+        contextCanvas.moveTo(lastPositionX, lastPositionY);
+        contextCanvas.lineTo(positionX, positionY);
+        contextCanvas.stroke()
+    }
+
+    lastPositionX = positionX
+    lastPositionY = positionY
+}
+
+export { drawing }
 
 canvas.addEventListener('touchstart', event => {
     if (modoSelecionado === 'balde-tinta') {
@@ -148,7 +171,3 @@ canvasImage.addEventListener('click', function () {
     // Atribua o URL de dados ao atributo href do link
     downloadLink.href = dataURL;
 });
-
-const mainScreen = document.querySelector('.main')
-
-mainScreen.addEventListener('touchmove', event => event.preventDefault());

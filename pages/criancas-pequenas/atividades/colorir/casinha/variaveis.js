@@ -17,12 +17,12 @@ const cores = {
 }
 
 const coresTinta = {
-    laranja: '#D6812309',
-    salmon: '#FF837B09',
-    rosa: '#F34FA509',
-    verde: '#74BE2109',
-    azul: '#3F57D609',
-    amarelo: '#D4D73B'
+    laranja: '#D6812019',
+    salmon: '#FF837B19',
+    rosa: '#F34FA519',
+    verde: '#74BE2119',
+    azul: '#3F57D619',
+    amarelo: '#D4D73B19'
 }
 
 export { paintModes, tintas, canvas, contextCanvas, containerCanvas, canvasWidth, canvasHeight, tamanhoPincel, cores, coresTinta }

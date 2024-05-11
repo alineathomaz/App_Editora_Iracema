@@ -10,11 +10,16 @@ let modoSelecionado = 'pincel'
 let corSelecionada = ''
 let corSelecionadaBaldeTinta = ''
 let dragging = false;
+let lastPositionX;
+let lastPositionY;
+const canvasOffsetLeft = containerCanvas.offsetLeft
+const canvasOffsetTop = containerCanvas.offsetTop
 
 
 canvas.width = canvasWidth
 canvas.height = canvasHeight
 canvas.style.backgroundColor = '#fff'
+console.log(contextCanvas)
 
 paintModes.forEach(paintMode => {
     paintMode.addEventListener('click', () => {
@@ -23,19 +28,29 @@ paintModes.forEach(paintMode => {
         }
 
         const elementoSelecionado = document.querySelector('.pinceis .selected')
-        elementoSelecionado.firstElementChild.src = `/src/images/quadro-digital/buttons/modes/${elementoSelecionado.name}.svg`
+        elementoSelecionado.firstElementChild.src = `../../../../../src/images/quadro-digital/buttons/modes/${elementoSelecionado.name}.svg`
         elementoSelecionado.classList.toggle('selected')
 
         paintMode.classList.toggle('selected')
-        paintMode.firstElementChild.src = `/src/images/quadro-digital/buttons/modes/${paintMode.name}-ativo.svg`
+        paintMode.firstElementChild.src = `../../../../../src/images/quadro-digital/buttons/modes/${paintMode.name}-ativo.svg`
 
         
         modoSelecionado = paintMode.name
         
         if(modoSelecionado === 'pincel') {
             contextCanvas.lineWidth = 5
+
+            contextCanvas.strokeStyle = corSelecionada
+            contextCanvas.fillStyle = corSelecionada
+
+            console.log(corSelecionada)
         } else if (modoSelecionado = 'balde-tinta') {
             contextCanvas.lineWidth = 30
+
+            contextCanvas.strokeStyle = corSelecionada
+            contextCanvas.fillStyle = corSelecionada
+
+            console.log(corSelecionada)
         }
         
         if (paintMode.name === 'borracha') {
@@ -65,6 +80,9 @@ tintas.forEach(tinta => {
         }
         contextCanvas.strokeStyle = corSelecionada
         contextCanvas.fillStyle = corSelecionada
+
+        console.log(corSelecionada)
+        console.log(contextCanvas)
     })
 })
 
@@ -72,27 +90,37 @@ tintas.forEach(tinta => {
 let drawingStart = function (event) {
 
     dragging = true;
-    let positionX = event.clientX - containerCanvas.offsetLeft;
-    let positionY = event.clientY - containerCanvas.offsetTop;
-    contextCanvas.moveTo(positionX, positionY)
-    drawing(event, dragging)
-}
+    let positionX = event.clientX - canvasOffsetLeft;
+    let positionY = event.clientY - canvasOffsetTop;
+    lastPositionX = positionX
+    lastPositionY = positionY
 
-const drawing = function (event) {
-    let positionX = event.clientX - containerCanvas.offsetLeft;
-    let positionY = event.clientY - containerCanvas.offsetTop;
-    if (dragging == true) {
-        contextCanvas.lineCap = 'round';
-        contextCanvas.lineTo(positionX, positionY);
-        contextCanvas.stroke()
-        contextCanvas.moveTo(positionX, positionY);
+    if (modoSelecionado === 'spray') {
+        drawingSpray(event, radius, dragging)
+    } else {
+        drawing(event, dragging)
     }
 }
 
 let drawingStopped = function () {
     dragging = false;
-    desenhaCasinha()
     contextCanvas.beginPath()
+}
+
+const drawing = function (event, dragging) {
+
+    let positionX = event.pageX - canvasOffsetLeft
+    let positionY = event.pageY - canvasOffsetTop
+    if (dragging == true) {
+        contextCanvas.lineCap = 'round'
+        contextCanvas.beginPath()
+        contextCanvas.moveTo(lastPositionX, lastPositionY);
+        contextCanvas.lineTo(positionX, positionY);
+        contextCanvas.stroke()
+    }
+
+    lastPositionX = positionX
+    lastPositionY = positionY
 }
 
 canvas.addEventListener('touchstart', event => {
@@ -131,9 +159,12 @@ canvas.addEventListener('mouseup', drawingStopped)
 const configuracaoInicial = () => {
     const corInicial = document.querySelector('.paint-colors .selected')
     corSelecionada = coresTinta[corInicial.name]
+    console.log(corSelecionada)
     contextCanvas.strokeStyle = corSelecionada
     contextCanvas.fillStyle = corSelecionada
     contextCanvas.lineWidth = 5
+
+    console.log(contextCanvas)
 }
 
 
