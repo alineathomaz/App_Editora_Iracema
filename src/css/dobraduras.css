@@ -23,150 +23,107 @@
     height: 100%;
 }
 
-.main .selecao-dobradura {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    height: auto;
-    aspect-ratio: 16 / 8;
-}
-
-.main .selecao-dobradura .dobraduras {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20%;
-    width: 100%;
-}
-
-.main .selecao-dobradura .main-image {
-    width: 40%;
-}
-
-.main .selecao-dobradura .dobraduras a {
-    width: 16.6%;
-}
-
-.main .selecao-dobradura .dobraduras a img {
-    width: 100%;
-}
-
-.main .hidden, .main .dobradura.hidden {
-    display: none;
-    opacity: 0;
-}
-
 .main .dobradura {
+    width: 90%;
+    height: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 70%;
-    height: auto;
-    aspect-ratio: 16 / 8;
-    position: relative;
-    transform: translateY(-5%);
-}
-
-.main .dobradura .name-image {
-    width: 27.5%;
-    height: 20%;
-}
-
-.main .dobradura .passos {
-    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5%;
-    width: 80%;
 }
 
-.main .dobradura .passos .passo {
-    width: 50%;
-    transition: all 0.5s ease-in-out;
+.main .dobradura .nome-dobradura {
+    position: absolute;
+    top: 3%;
+    width: 22%;
+    height: 15%;
 }
 
-.main .dobradura .passos .passo img {
+.main .dobradura .nome-dobradura .name-image {
     width: 100%;
+    height: 100%;
+}
+
+.main .dobradura .passos-dobradura {
+    position: absolute;
+    top: 20%;
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: 75%;
+}
+
+.main .dobradura .passos-dobradura.barco-pronto {
+    justify-content: center;
+}
+
+.main .dobradura .passos-dobradura .passo {
+    width: 100%;
+    height: 100%;
+}
+
+.main .dobradura .passos-dobradura .passo.aviao-pronto {
+    width: 80%;
+    height: 80%;
+}
+
+.main .dobradura .passos-dobradura .passo.barco-pronto {
+    width: 70%;
+    height: 70%;
+}
+
+.main .dobradura .passos-dobradura .passo.cachorro-pronto {
+    width: 80%;
+    height: 80%;
+}
+
+.main .dobradura .passos-dobradura .passo.flor-pronto {
+    width: 85%;
+    height: 85%;
+}
+
+.main .dobradura .passos-dobradura .passo.gato-pronto {
+    width: 70%;
+    height: 85%;
+    transform: translate(-10%);
+}
+
+.main .dobradura .passos-dobradura .passo.gato {
+    transform: translate(-5%);
 }
 
 .main .dobradura .btn-avancar {
     position: absolute;
-    top: 55%;
-    right: 0;
-    width: 8.4%;
-    transform: translateX(50%);
-    transition: all .4s ease-in-out;
+    right: 6%;
+    top: 51%;
+    width: 7%;
+    height: 14%;
+}
+
+.main .dobradura .btn-avancar.barco {
+    right: 4%;
+}
+
+.main .dobradura .btn-avancar.pronto.aviao {
+    top: 60%;
+}
+
+.main .dobradura .btn-avancar.cachorro-pronto {
+    top: 82%;
+    right: 30%;
+}
+
+.main .dobradura .btn-avancar.flor-pronto {
+    top: 75%;
+    right: 16%;
+}
+
+.main .dobradura .btn-avancar.gato-pronto {
+    top: 82%;
+    right: 10%;
 }
 
 .main .dobradura .btn-avancar img {
     width: 100%;
-}
-
-.main .dobradura .btn-avancar.pronto {
-    right: 25%;
-    top: 90%;
-}
-
-.main .dobradura .btn-avancar.pronto-flor {
-    top: 75%;
-}
-
-.main .dobradura .passos .passo {
-    position: relative;
-}
-
-.main .dobradura .passos .passo.pronto {
-    width: 50%;
-    height: 80%;
-}
-
-.main .dobradura .passos .passo.pronto.gato {
-    width: 40%;
-    height: 90%;
-}
-
-.main .dobradura .passos .passo.pronto.flor {
-    width: 35%;
-}
-
-.main .dobradura .passos .passo.pronto.barco {
-    width: 85%;
-}
-
-.main .dobradura .passos .passo a {
-    position: absolute;
-    top: 12%;
-    right: 5%;
-    width: 10%;
-}
-
-.main .parabens {
-    position: absolute;
-    background-color: #FFFFFFBB;
-    width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main .parabens img {
-    width: 70%;
-    height: 35%;
-}
-
-.main .navegacao.concluido {
-    top: 70%;
-    left: 43%;
-    z-index: 2;
-}
-
-.parabens.hidden {
-    display: hidden;
-    opacity: 0;
-    z-index: -1;
 }
