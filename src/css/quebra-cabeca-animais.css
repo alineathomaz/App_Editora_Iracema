@@ -1,7 +1,6 @@
-.main{
+.main {
     width: 100vw;
-    height: auto;
-    max-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,13 +9,27 @@
     aspect-ratio: 1600 / 800;
 }
 
-.main .navegacao{
+.main .navegacao {
     position: absolute;
+    display: flex;
+    gap: 1%;
     top: 1%;
     left: 1%;
+    width: 11%;
+    height: 11%;
 }
 
-.main .main-image {
+.main .navegacao a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.main .navegacao a img {
+    width: 100%;
+}
+
+.main .main-image-selecao {
     position: absolute;
     top: 5%;
     width: 25%;
@@ -41,4 +54,93 @@
 .main .jogos a img {
     width: 100%;
     height: 100%;
+}
+
+.main .nome-jogo {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 4%;
+    width: 80%;
+    height: 12.5%;
+    gap: 2%;
+}
+
+.main .nome-jogo .main-image {
+    width: 50%;
+    height: 50%;
+}
+
+.main .paragrafo {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.6rem;
+    line-height: 26px;
+    text-align: center;
+    color: #B9B9B9;
+    width: 40%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+.main .canvas-container {
+    position: absolute;
+    top: 8.5%;
+}
+
+.main .parabens {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: #dad8d8b2;
+    gap: 1%;
+}
+
+.main .parabens img {
+    width: 60%;
+}
+
+.main .parabens img.concluiu {
+    width: 25%;
+}
+
+.main .parabens .navegacao-concluido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    gap: 2%;
+}
+
+.main .parabens .navegacao-concluido a {
+    width: 100%;
+    height: 100%;
+}
+
+.main .parabens .navegacao-concluido a img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .parabens.hidden {
+    display: none;
+    opacity: 0;
+}
+
+
+
+@media (max-width: 1100px) {
+    .main .paragrafo {
+        top: 21%;
+        font-size: 1.9rem;
+    }
 }

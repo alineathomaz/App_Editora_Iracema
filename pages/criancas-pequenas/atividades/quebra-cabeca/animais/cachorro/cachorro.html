@@ -21,31 +21,45 @@
 
     <main class="main">
 
+        
         <header class="navegacao">
-            <a href="../animais.html"><img src="../../../../../../src/images/buttons/navegacao/voltar-branco.svg" alt="Botão voltar"></a>
-            <a href="../../../../../../index.html"><img src="../../../../../../src/images/buttons/navegacao/home-branco.svg" alt="Botão home"></a>
+            <a href="../animais.html"><img src="../../../../../../src/images/buttons/navegacao/voltar-branco.svg"
+                    alt="Botão voltar"></a>
+            <a href="../../../../../../index.html"><img
+                    src="../../../../../../src/images/buttons/navegacao/home-branco.svg" alt="Botão home"></a>
             <a><img src="../../../../../../src/images/buttons/audiodescricao-branco.svg" alt="Botão Audiodescrição"></a>
         </header>
 
-        <img class="main-image" src="../../../../../../src/images/quebra-cabeca/animais/tituloCachorro.svg" alt="Imagem de título cachorro" style="position: absolute;">
+        <div class="nome-jogo">
+            <img class="main-image" src="../../../../../../src/images/quebra-cabeca/animais/tituloCachorro.svg"
+                alt="Imagem de título Cachorro">
+        </div>
+
+        <p class="paragrafo"> Arraste as peças do quebra-cabeça para dentro do quadrado para formar a imagem do cachorro
+        </p>
 
         <div>
+            <canvas id="canvas-container"></canvas>
+        </div>
 
-            <p style="position: absolute; width: 500px; height: 52px; left: 170px; top: 250px; 
-            font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 25px;
-            line-height: 26px; text-align: center;color: #B9B9B9;">
-            Arraste as peças do quebra-cabeça para dentro do quadrado para formar a imagem do cachorro
-            </p>
-
-            <canvas id="canvas-container" style="margin-left: 3%;margin-top: 12%;"></canvas>
-
-           <script src="./cachorro.js"></script>
-
+        <div class="parabens hidden">
+            <img src="../../../../../../src/images/dobraduras-e-recortes/parabens.svg" alt="Escrita de parabens">
+            <img src="../../../../../../src/images/dobraduras-e-recortes/concluiu.svg" alt="Escrita de você concluiu"
+                class="concluiu">
+            <div class="navegacao-concluido">
+                <a href="../animais.html"><img src="../../../../../../src/images/buttons/navegacao/voltar-branco.svg"
+                        alt="Botão voltar"></a>
+                <a href="../../../../../../index.html"><img
+                        src="../../../../../../src/images/buttons/navegacao/home-branco.svg" alt="Botão home"></a>
+                <a><img src="../../../../../../src/images/buttons/audiodescricao-branco.svg"
+                        alt="Botão Audiodescrição"></a>
             </div>
         </div>
 
+
     </main>
 
+    <script src="./cachorro.js"></script>
     
 </body>
 </html>

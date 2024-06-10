@@ -51,10 +51,10 @@ function init() {
     }     
    
     if(!isMobile){
-        console.log('entrei aqui');
         document.getElementById('screen-message').innerHTML = 'Disponível apenas para dispositivos móveis';
     } else {
         document.getElementById('screen-message').innerHTML = 'Gire o tablet para a posição retrato';
+        window.alert('Gire o tablet para a posição retrato');
     }
 
     displayElements();
